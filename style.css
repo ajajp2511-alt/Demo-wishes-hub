@@ -1,0 +1,19 @@
+:root { --bg: #f0f2f5; --card: #ffffff; --text: #1c1e21; --primary: #6c5ce7; --input: #fff; --border: #ddd; }
+[data-theme="dark"] { --bg: #18191a; --card: #242526; --text: #e4e6eb; --primary: #a29bfe; --input: #3a3b3c; --border: #444; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: 0.3s ease; }
+body { background: var(--bg); color: var(--text); }
+.navbar { background: var(--primary); padding: 12px 20px; color: white; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000; }
+.container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+.search-box { width: 100%; padding: 14px 20px; border-radius: 30px; border: 1px solid var(--border); background: var(--input); margin-bottom: 20px; outline: none; }
+.filters { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; }
+.filter-btn { padding: 8px 20px; border-radius: 25px; border: 1.5px solid var(--primary); background: var(--card); color: var(--primary); cursor: pointer; white-space: nowrap; font-weight: 600; }
+.filter-btn.active { background: var(--primary); color: white; }
+#adminTools { background: var(--card); padding: 25px; border-radius: 15px; margin-bottom: 30px; border-left: 6px solid #00b894; display: none; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.card { background: var(--card); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); position: relative; }
+.card-img { width: 100%; height: 200px; object-fit: cover; }
+.btn-wa { display: block; background: #25d366; color: white; text-align: center; padding: 12px; border-radius: 10px; text-decoration: none; margin-top: 15px; font-weight: 600; }
+.btn-copy { width: 100%; background: var(--bg); border: none; padding: 10px; border-radius: 10px; cursor: pointer; margin-top: 8px; font-weight: 600; }
+.btn-outline { background: transparent; border: 1.5px solid white; color: white; padding: 6px 16px; border-radius: 20px; cursor: pointer; }
+.modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; }
+.modal-content { background: var(--card); padding: 30px; border-radius: 25px; width: 90%; max-width: 400px; text-align: center; }

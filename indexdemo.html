@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WishesHub | Unlimited Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2 onclick="location.reload()" style="cursor:pointer;">✨ WishesHub</h2>
+        <div class="nav-right">
+            <button onclick="toggleTheme()" style="background:none; border:none; color:white; font-size:22px;">🌓</button>
+            <button id="fBtn" onclick="openFeedback()" style="display:none; background:none; border:none; color:white; font-size:22px;">💬</button>
+            <div id="userBtnSection"><button class="btn-outline" onclick="openAuth()">Login</button></div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <input type="text" class="search-box" id="searchInp" placeholder="Search wishes..." onkeyup="searchPosts()">
+        
+        <div class="filters" id="catFilter">
+            <button class="filter-btn active" onclick="filterPosts('All', this)">All</button>
+            <button class="filter-btn" onclick="filterPosts('Birthday', this)">🎂 Birthday</button>
+            <button class="filter-btn" onclick="filterPosts('Love', this)">❤️ Love</button>
+            <button class="filter-btn" onclick="filterPosts('Shayari', this)">✍️ Shayari</button>
+            </div>
+
+        <div id="adminTools">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h3>🚀 Admin Panel (Unlimited Storage)</h3>
+                <button onclick="downloadBackup()" style="background:#0984e3; color:white; border:none; padding:8px 15px; border-radius:8px;">📥 Backup</button>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <input type="text" id="wTitle" placeholder="Post Title">
+                <select id="wCat">
+                    <option>Birthday</option><option>Love</option><option>Shayari</option><option>Others</option>
+                </select>
+            </div>
+            <input type="file" id="wFile" accept="image/*">
+            <textarea id="wText" placeholder="Write message..." rows="4"></textarea>
+            <button onclick="publishData()" id="pubBtn" style="width:100%; padding:14px; background:#00b894; color:white; border:none; border-radius:12px; font-weight:600; margin-top:10px;">Publish Live ✅</button>
+        </div>
+
+        <div class="grid" id="mainGrid">Loading...</div>
+    </div>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h3 id="authT">Login</h3>
+            <input type="email" id="authEmail" placeholder="Email">
+            <input type="password" id="authPass" placeholder="Password">
+            <button onclick="handleAuth()" class="btn-copy" style="background:var(--primary); color:white;">Continue</button>
+            <p onclick="toggleMode()" id="modeSwitch" style="margin-top:15px; cursor:pointer; color:var(--primary);">Sign Up</p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+    <script src="storage.js"></script> <script src="script.js"></script>  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+</body>
+</html>
